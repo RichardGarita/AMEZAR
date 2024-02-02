@@ -1,0 +1,292 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.index {
+  width: 70%;
+  margin: auto;
+  margin-top: 10%;
+}
+
+.index-header{
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 3.5em;
+  top: 0;
+  background-color: #1BA505;
+  z-index: 15;
+  align-items: flex-end;
+}
+
+.menu-icon{
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 3.5em;
+  z-index: 15;
+  cursor: pointer;
+}
+
+.help-link{
+  width: 3.5em;
+  height: 3.5em;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: 0.5%;
+}
+
+.help-icon{
+  width: 3.5em;
+  margin-left: auto;
+  margin-right: 0.5%;
+}
+
+.table-row td{
+  border: 1px solid black;
+}
+
+.search-bar {
+  box-sizing: border-box;
+  width: calc(100% - 20px);
+  margin: auto;
+  border-radius: 25px;
+  border: none;
+  font-size: 1.7em;
+  padding: 10px;
+  display: block; /* Hace que el elemento sea un bloque */
+  margin-top: 1%;
+  margin-left: auto; /* Empuja el elemento hacia la derecha */
+  margin-right: auto; /* Empuja el elemento hacia la izquierda */
+}
+
+.index-content{
+  background-color: #90DD84;
+}
+
+.section-header{
+  background-color: #1E7722;
+  color: #FFFFFF;
+  padding: 5px;
+  font-size: 1.7em;
+  margin-bottom: 0;
+}
+
+.index-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 1%;
+}
+
+/* Estilos para los enlaces */
+.index-list a {
+  text-decoration: none; /* Quita el subrayado predeterminado */
+  color: black; /* Establece el color del texto para los enlaces */
+}
+
+.index-list a p {
+  font-size: 1.5em;
+}
+
+.index-list a:hover {
+  text-decoration: underline; /* Agrega un subrayado al pasar el mouse sobre el enlace */
+}
+
+.menu {
+  position: fixed;
+  top: 1.5em;
+  left: -250px; /* Inicialmente fuera de la pantalla a la izquierda */
+  width: 250px;
+  height: 100%;
+  transition: left 0.3s ease; /* Agrega una transición suave */
+  background-color: #1BA505;
+  color: #000000;
+  font-size: 1.5em;
+  z-index: 10;
+}
+
+.menu ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu ul li{
+  padding: 0.5%;
+}
+
+.menu ul li:hover{
+  cursor: pointer;
+}
+
+.menu.visible {
+  left: 0; /* Muestra el menú cuando la clase "visible" está presente */
+}
+
+.menu.hidden {
+  left: -250px; /* Oculta el menú cuando la clase "oculto" está presente */
+}
+
+.index {
+  position: relative;
+}
+
+.content {
+  transition: filter 0.3s ease-out; /* Agregar una transición para suavizar el efecto */
+  z-index: 1;
+}
+
+.blurred {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  pointer-events: none; /* Permite que los eventos pasen a través del contenido desenfocado */
+}
+
+.item-nav{
+  position: fixed;
+  top: 0;
+  display: flex;
+  background-color: #1BA505;
+  height: 3.5em;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.back-icon{
+  width: 3.5em;
+  cursor: pointer;
+}
+
+.item-name{
+  margin: auto;
+  margin-left: 1em;
+}
+
+.item-content{
+  margin-top: 3.5em;
+  text-align: center;
+  display: grid;
+  overflow-x: auto; /* Agregamos un desplazamiento horizontal si el contenido es más ancho que el contenedor */
+  zoom: 1; /* Establecemos el nivel de zoom inicial */
+  transition: zoom 0.3s ease; /* Agregamos una transición para suavizar el efecto de zoom */
+}
+
+.item-table{
+  background-color: #FFFFFF;
+  padding: 1%;
+  margin: auto;
+}
+
+.table-row td{
+  max-width: 7.5em;
+}
+
+.table-help-row td{
+  max-width: 10em;
+}
+
+.table-help tr:nth-child(9) {
+  td:nth-child(6), td:nth-child(12), td:nth-child(15){
+    background-color: lightcoral;
+    color: red;
+  }
+
+  td:nth-child(5),td:nth-child(7),td:nth-child(8),td:nth-child(9),td:nth-child(10),td:nth-child(11),
+  td:nth-child(13),td:nth-child(14){
+    background-color: lightgreen;
+    color: green;
+  }
+
+}
+
+.item-header{
+  font-size: 1.7em;
+}
+
+.table-header {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    margin-top: 4em;
+  }
+
+  .index-header{
+    height: 4em;
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width:1024px){
+  .content {
+    margin-top: 6em;
+  }
+
+  .item-nav{
+    height: 4em;
+    font-size: 1.2em;
+    align-items: center;
+  }
+
+  .item-content{
+    zoom: 1.2; /* Puedes ajustar este valor según sea necesario */
+  }
+
+  .table-help{
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+}
+
+@media screen and (min-width:1025px) and (max-width: 1400px){
+  .content, .item-content {
+    font-size: 2em;
+  }
+
+  .index-header, .item-nav{
+    font-size: 1.5em;
+  }
+
+  .table-help{
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+}
+
